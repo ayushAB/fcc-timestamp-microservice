@@ -2,12 +2,12 @@ const parseTime = function(time){
     if(isNaN(time)) {
         if(new Date(time) != "Invalid Date") {
             return {
-                'unix': new Date(time).getTime(),
-                'utc': new Date(time).toUTCString()
+                unix: new Date(time).getTime(),
+                utc: new Date(time).toUTCString()
             }
         }else {
             return {
-                error:'Invalid Date'
+                error: 'Invalid Date'
             }
         }
     }else {
@@ -19,7 +19,7 @@ const parseTime = function(time){
             }
         }else {
             return {
-                'error':'Invalid Date'
+                error: 'Invalid Date'
             }
         }
         
