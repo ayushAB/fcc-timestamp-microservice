@@ -13,6 +13,7 @@ app.use(cors({optionsSuccessStatus: 200}));  // some legacy browsers choke on 20
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 require('dotenv').config()
+const timeParser = require('./time.js');
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (req, res) {
@@ -22,11 +23,8 @@ app.get("/", function (req, res) {
 
 // your first API endpoint... 
 app.get("/api/:time", function (req, res) {
-  res.json({
-    'unix': new Date(req.params.time).getTime(),
-    'utc': new Date(req.params.time).toUTCString()
-  });
-
+ //let date =  (req.params.time/1000) ? (req.params.time/1000) : req.params.time
+ res.json(timeParser(req.params.time));
 });
 
 
