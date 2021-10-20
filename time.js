@@ -7,15 +7,15 @@ const parseTime = function(time){
             }
         }else {
             return {
-                'error':'Invalid Date'
+                error:'Invalid Date'
             }
         }
     }else {
 
         if(new Date(+time) != "Invalid Date") {
             return {
-                'unix': time,
-                'utc': new Date(+time).toUTCString()
+                unix: time,
+                utc: new Date(+time).toUTCString()
             }
         }else {
             return {

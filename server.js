@@ -20,6 +20,12 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+app.get("/api", function (req, res) {
+      res.json({
+        'unix': new Date().getTime(),
+        'utc': new Date().toUTCString()
+    })
+ });
 
 // your first API endpoint... 
 app.get("/api/:time", function (req, res) {
